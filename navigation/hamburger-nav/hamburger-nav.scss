@@ -1,0 +1,153 @@
+/*ヘッダー*/
+.header {
+  background: rgb(245, 242, 243);
+  width: 100%;
+  height: 60px;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+/*ハンバーガー*/
+.ham {
+  position: relative;
+  // inputのcheckboxは非表示
+  &_checkbox{
+    display: none;
+  }
+  // ハンバーガーアイコン
+  &_icon{
+    cursor: pointer;
+    display: block;
+    width: 55px;
+    height: 50px;
+    position: fixed;
+    left: 0;
+    // ハンバーガーアイコンの線
+    .icon_parts1,
+    .icon_parts2,
+    .icon_parts3{
+      background-color: #000;   
+      display: block;
+      width: 25px;
+      height: 2px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      margin: auto;
+    }
+    .icon_parts1{
+      top: 16px
+    }
+    .icon_parts3{
+      top: -16px
+    }
+    .icon_name,
+    .icon_name2 {
+      position: absolute;
+      top: 40px;
+      left: 13px;
+      font-size: 1.2rem;
+      user-select: none;
+    }
+    .icon_name2 {
+      display:none;
+    }
+  }
+  
+  // ハンバーガーメニュー開いた時のメインエリアを暗く
+  &_overlay{
+    background: #000;
+    opacity: 0;
+    pointer-events: none; //ポインタの動作全部無効化
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+  }
+  
+  // ハンバーガーメニュー
+  &_menu{
+    background: #ffffff;
+    color: #000;
+    max-width: 100%;
+    width: 320px;
+    height: 100vh;
+    overflow-y: auto; //スクロール
+    -webkit-overflow-scrolling: touch; //スクロール（SP）
+    position: fixed;
+    top: 0;
+    left: -320px;
+    ul {
+      margin-top: 100px;
+    }
+  }
+  // z-indexの指定（1がメインエリア）
+  &_icon{
+    z-index: 4;
+  }
+  &_menu{
+    z-index: 3;
+  }
+  &_overlay{
+    z-index: 2;
+  }
+  
+  // チェックが入ったら（アイコンクリックしたら）
+  &_checkbox:checked ~ {
+    // ハンバーガーアイコン
+    .ham_icon{
+      .icon_parts1{
+      // -webkit-transform: rotate(45deg);
+      // transform: rotate(45deg);
+      -webkit-transform: rotate(315deg);
+      transform: rotate(315deg);
+      top: 0;
+      }
+     .icon_parts2{
+          // background: transparent;
+          left: 400%;
+          opacity: 0;  
+          // -webkit-animation: icon_parts2 .8s forwards;
+          // animation: icon_parts2 .8s forwards;
+      }
+      .icon_parts3{
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+        -webkit-transform: rotate(405deg);
+        transform: rotate(405deg);
+        top: 0;
+      }
+      .icon_name {
+        display: none;
+      }
+      .icon_name2 {
+        display: block;
+      }
+    }
+    // メインエリアを暗くする
+    .ham_overlay {
+      opacity: 0.3;
+      pointer-events: auto; //ポインタの動作デフォルトに戻す
+    }
+    // メニューをだす
+    .ham_menu {
+      left: 0;
+    }
+  }
+  // 動きをスムーズに
+  .icon_parts1,
+  .icon_parts2,
+  .icon_parts3,
+  .icon_name,
+  .icon_name2,
+  &_overlay,
+  &_menu{
+    -webkit-transition: all .3s ;
+    transition: all .3s ;
+  }
+
+}
