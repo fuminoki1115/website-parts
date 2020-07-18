@@ -1,0 +1,153 @@
+@charset "UTF-8";
+/*ヘッダー*/
+.header {
+  background: #f5f2f3;
+  width: 100%;
+  height: 60px;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+/*ハンバーガー*/
+.ham {
+  position: relative;
+}
+
+.ham_checkbox {
+  display: none;
+}
+
+.ham_icon {
+  cursor: pointer;
+  display: block;
+  width: 55px;
+  height: 50px;
+  position: fixed;
+  left: 0;
+}
+
+.ham_icon .icon_parts1,
+.ham_icon .icon_parts2,
+.ham_icon .icon_parts3 {
+  background-color: #000;
+  display: block;
+  width: 25px;
+  height: 2px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.ham_icon .icon_parts1 {
+  top: 16px;
+}
+
+.ham_icon .icon_parts3 {
+  top: -16px;
+}
+
+.ham_icon .icon_name,
+.ham_icon .icon_name2 {
+  position: absolute;
+  top: 36px;
+  left: 12px;
+  font-size: 1.1rem;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.ham_icon .icon_name2 {
+  display: none;
+}
+
+.ham_overlay {
+  background: #000;
+  opacity: 0;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+
+.ham_menu {
+  background: #ffffff;
+  color: #000;
+  max-width: 100%;
+  width: 320px;
+  height: 100vh;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  position: fixed;
+  top: 0;
+  left: -320px;
+}
+
+.ham_menu ul {
+  margin-top: 100px;
+}
+
+.ham_icon {
+  z-index: 4;
+}
+
+.ham_menu {
+  z-index: 3;
+}
+
+.ham_overlay {
+  z-index: 2;
+}
+
+.ham_checkbox:checked ~ .ham_icon .icon_parts1 {
+  -webkit-transform: rotate(315deg);
+  transform: rotate(315deg);
+  top: 0;
+}
+
+.ham_checkbox:checked ~ .ham_icon .icon_parts2 {
+  left: 400%;
+  opacity: 0;
+}
+
+.ham_checkbox:checked ~ .ham_icon .icon_parts3 {
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(405deg);
+  transform: rotate(405deg);
+  top: 0;
+}
+
+.ham_checkbox:checked ~ .ham_icon .icon_name {
+  display: none;
+}
+
+.ham_checkbox:checked ~ .ham_icon .icon_name2 {
+  display: block;
+}
+
+.ham_checkbox:checked ~ .ham_overlay {
+  opacity: 0.3;
+  pointer-events: auto;
+}
+
+.ham_checkbox:checked ~ .ham_menu {
+  left: 0;
+}
+
+.ham .icon_parts1,
+.ham .icon_parts2,
+.ham .icon_parts3,
+.ham .icon_name,
+.ham .icon_name2, .ham_overlay, .ham_menu {
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+/*# sourceMappingURL=hamburger-nav.css.map */
