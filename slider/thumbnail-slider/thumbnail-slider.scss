@@ -1,10 +1,14 @@
+
+ input[type="radio"] {
+  display: none;
+ }
+
 .slide {
   position: relative;
   width: 100%;
   height: 500px;
   overflow: hidden;
- }
- .slide img {
+  img {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -13,6 +17,24 @@
   height: auto;
   opacity: 0;
  }
+}
+
+.thumbnail {
+  list-style: none;
+  display: flex;
+  padding: 0;
+  margin-top: 30px;
+  justify-content: center;
+  img {
+  display: block;
+  width: 200px;
+  height: 100px;
+  object-fit: cover;
+  margin: 10px;
+  cursor: pointer;
+ }
+}
+
  @keyframes thumb1 {
   0% {
    filter: grayscale(0%);
@@ -63,6 +85,7 @@
    filter: grayscale(0%);
   }
  }
+
  @keyframes thumb3 {
   0% {
    filter: grayscale(0%);
@@ -79,7 +102,7 @@
   28% {
    filter: grayscale(100%);
   }
- 
+
   37% {
    filter: grayscale(0%);
   }
@@ -88,6 +111,7 @@
    filter: grayscale(0%);
   }
 }
+
  @keyframes thumb4 {
   0% {
    filter: grayscale(0%);
@@ -113,6 +137,7 @@
    filter: grayscale(0%);
   }
  }
+
  @keyframes slideshow1 {
   0% {
    opacity: 0;
@@ -155,8 +180,8 @@
   100% {
    opacity: 0;
   }
- 
  }
+
  @keyframes slideshow3 {
   0% {
    opacity: 0;
@@ -178,6 +203,7 @@
    opacity: 0;
   }
  }
+
  @keyframes slideshow4 {
   0% {
    opacity: 0;
@@ -198,154 +224,152 @@
   100% {
    opacity: 0;
   }
+ }
  
- }
- .thumbnail {
-  list-style: none;
-  display: flex;
-  padding: 0;
-  margin-top: 30px;
-  justify-content: center;
- }
- input[type="radio"] {
-  display: none;
- }
- .thumbnail img {
-  display: block;
-  width: 200px;
-  height: 100px;
-  object-fit: cover;
-  margin: 10px;
-  cursor: pointer;
- }
  /*ページを開いたとき＆一つ目のサムネイルをクリックしたとき*/
- #img1:checked ~ .thumbnail label[for="img1"] img {
+ #img1:checked ~ .thumbnail{
+  label[for="img1"] img {
   animation: thumb1 24s linear infinite both;
   animation-delay: 0s;
   cursor: auto;
- }
- #img1:checked ~ .thumbnail label[for="img2"] img {
+  }
+  label[for="img2"] img {
   animation: thumb1 24s linear infinite both;
   animation-delay: 6s;
  }
- #img1:checked ~ .thumbnail label[for="img3"] img {
+ label[for="img3"] img {
   animation: thumb1 24s linear infinite both;
   animation-delay: 12s;
  }
- #img1:checked ~ .thumbnail label[for="img4"] img {
+ label[for="img4"] img {
   animation: thumb1 24s linear infinite both;
   animation-delay: 18s;
  }
- #img1:checked ~ .slide img {
+}
+ #img1:checked {
+  &~ .slide img {
   animation: slideshow1 24s linear infinite;
  }
- #img1:checked ~ .slide img:nth-child(1) {
+ &~ .slide img:nth-child(1) {
   animation-delay: 0s;
  }
- #img1:checked ~ .slide img:nth-child(2) {
+ &~ .slide img:nth-child(2) {
   animation-delay: 6s;
  }
- #img1:checked ~ .slide img:nth-child(3) {
+ &~ .slide img:nth-child(3) {
   animation-delay: 12s;
  }
- #img1:checked ~ .slide img:nth-child(4) {
+ &~ .slide img:nth-child(4) {
   animation-delay: 18s;
  }
+}
  /*二つ目のサムネイルをクリックしたとき*/
- #img2:checked ~ .thumbnail label[for="img1"] img {
+ #img2:checked ~ .thumbnail {
+ label[for="img1"] img {
   animation: thumb2 24s linear infinite both;
   animation-delay: 18s;
  }
- #img2:checked ~ .thumbnail label[for="img2"] img {
+ label[for="img2"] img {
   animation: thumb2 24s linear infinite both;
   animation-delay: 0s;
   cursor: auto;
  }
- #img2:checked ~ .thumbnail label[for="img3"] img {
+ label[for="img3"] img {
   animation: thumb2 24s linear infinite both;
   animation-delay: 6s;
  }
- #img2:checked ~ .thumbnail label[for="img4"] img {
+ label[for="img4"] img {
   animation: thumb2 24s linear infinite both;
   animation-delay: 12s;
  }
- #img2:checked ~ .slide img {
+}
+ #img2:checked {
+   &~ .slide img {
   animation: slideshow2 24s linear infinite;
  }
- #img2:checked ~ .slide img:nth-child(1) {
+ &~ .slide img:nth-child(1) {
   animation-delay: 18s;
  }
- #img2:checked ~ .slide img:nth-child(2) {
+ &~ .slide img:nth-child(2) {
   animation-delay: 0s;
  }
- #img2:checked ~ .slide img:nth-child(3) {
+ &~ .slide img:nth-child(3) {
   animation-delay: 6s;
  }
- #img2:checked ~ .slide img:nth-child(4) {
+ &~ .slide img:nth-child(4) {
   animation-delay: 12s;
  }
+}
  /*三つ目のサムネイルをクリックしたとき*/
- #img3:checked ~ .thumbnail label[for="img1"] img {
+ #img3:checked ~ .thumbnail {
+   label[for="img1"] img {
   animation: thumb3 24s linear infinite both;
   animation-delay: 12s;
  }
- #img3:checked ~ .thumbnail label[for="img2"] img {
+ label[for="img2"] img {
   animation: thumb3 24s linear infinite both;
   animation-delay: 18s;
  }
- #img3:checked ~ .thumbnail label[for="img3"] img {
+ label[for="img3"] img {
   animation: thumb3 24s linear infinite both;
   animation-delay: 0s;
   cursor: auto;
  }
- #img3:checked ~ .thumbnail label[for="img4"] img {
+ label[for="img4"] img {
   animation: thumb3 24s linear infinite both;
  }
- #img3:checked ~ .slide img {
+}
+ #img3:checked {
+   ~ .slide img {
   animation: slideshow3 24s linear infinite;
  }
- #img3:checked ~ .slide img:nth-child(1) {
+ &~ .slide img:nth-child(1) {
   animation-delay: 12s;
  }
- #img3:checked ~ .slide img:nth-child(2) {
+ &~ .slide img:nth-child(2) {
   animation-delay: 18s;
  }
- #img3:checked ~ .slide img:nth-child(3) {
+ &~ .slide img:nth-child(3) {
   animation-delay: 0s;
  }
- #img4:checked ~ .slide img:nth-child(4) {
+ &~ .slide img:nth-child(4) {
   animation-delay: 6s;
  }
+}
  /*四つ目のサムネイルをクリックしたとき*/
- #img4:checked ~ .thumbnail label[for="img1"] img {
+ #img4:checked ~ .thumbnail {
+   label[for="img1"] img {
   animation: thumb4 24s linear infinite both;
   animation-delay: 6s;
  }
- #img4:checked ~ .thumbnail label[for="img2"] img {
+  label[for="img2"] img {
   animation: thumb4 24s linear infinite both;
   animation-delay: 12s;
  }
- #img4:checked ~ .thumbnail label[for="img3"] img {
+  label[for="img3"] img {
   animation: thumb4 18s linear infinite both;
   animation-delay: 0s;
  }
- #img4:checked ~ .thumbnail label[for="img4"] img {
+  label[for="img4"] img {
   animation: thumb4 24s linear infinite both;
   animation-delay: 0s;
   cursor: auto;
  }
- #img4:checked ~ .slide img {
+}
+ #img4:checked {
+   &~ .slide img {
   animation: slideshow4 24s linear infinite;
  }
- #img4:checked ~ .slide img:nth-child(1) {
+ &~ .slide img:nth-child(1) {
   animation-delay: 6s;
  }
- #img4:checked ~ .slide img:nth-child(2) {
+ &~ .slide img:nth-child(2) {
   animation-delay: 12s;
  }
- #img4:checked ~ .slide img:nth-child(3) {
+ &~ .slide img:nth-child(3) {
   animation-delay: 18s;
  }
- #img4:checked ~ .slide img:nth-child(4) {
+ &~ .slide img:nth-child(4) {
   animation-delay: 0s;
  }
+}
