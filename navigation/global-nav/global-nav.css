@@ -26,7 +26,7 @@
   height: 2px;
   background: #333;
   /*１.左右真ん中から出す*/
-  bottom: 2px;
+  bottom: 10px;
   -webkit-transition: -webkit-transform .3s;
   transition: -webkit-transform .3s;
   transition: transform .3s;
@@ -48,4 +48,4 @@
   /* 出方 */
   /* ２ */
 }
-/*# sourceMappingURL=global_nav.css.map */
+/*# sourceMappingURL=global-nav.css.map */

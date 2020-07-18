@@ -18,7 +18,7 @@
         background: #333;
 
         /*１.左右真ん中から出す*/
-        bottom: 2px;
+        bottom: 10px;
         transition: transform .3s;
         transform: scale(0, 1);
         transform-origin: right top; /*消え方*/
