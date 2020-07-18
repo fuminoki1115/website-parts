@@ -23,15 +23,12 @@ time, mark, audio, video {
     vertical-align:baseline;
     background:transparent;
 }
-body {
-    line-height:1;
-}
 article,aside,details,figcaption,figure,
 footer,header,hgroup,menu,nav,section {
     display:block;
 }
-nav ul {
-    list-style:none;
+ul, li {
+    list-style: none;
 }
 blockquote, q {
     quotes:none;
@@ -84,8 +81,4 @@ hr {
 }
 input, select {
     vertical-align:middle;
-}
-
-ul, li {
-    list-style: none;
 }

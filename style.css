@@ -1,0 +1,25 @@
+@charset "utf-8";
+
+/* ベース */
+html {
+  font-size: 62.5%;
+}
+body {
+  background-color: #f7f7f7;
+  color: #383838;
+  font-size: 1.6rem;
+  letter-spacing: 0.07em;
+  line-height: 1.5;
+  font-feature-settings: "palt" 1;
+  font-family: "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック体", "YuGothic", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", "Meiryo", "verdana", sans-serif;
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+a:link, a:visited, a:hover, a:active {
+  text-decoration: none;
+  color: #56C4F1;
+}
+.hidden {
+  display: none;
+}
