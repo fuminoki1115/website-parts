@@ -1,0 +1,51 @@
+@charset "UTF-8";
+.global-nav {
+  max-width: 1000px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.global-nav .nav-item {
+  height: 50px;
+  width: 200px;
+  line-height: 50px;
+  text-align: center;
+}
+
+.global-nav .nav-item a {
+  position: relative;
+  display: inline-block;
+}
+
+.global-nav .nav-item a::after {
+  position: absolute;
+  left: 0;
+  content: '';
+  width: 100%;
+  height: 2px;
+  background: #333;
+  /*１.左右真ん中から出す*/
+  bottom: 2px;
+  -webkit-transition: -webkit-transform .3s;
+  transition: -webkit-transform .3s;
+  transition: transform .3s;
+  transition: transform .3s, -webkit-transform .3s;
+  -webkit-transform: scale(0, 1);
+          transform: scale(0, 1);
+  -webkit-transform-origin: right top;
+          transform-origin: right top;
+  /*消え方*/
+  /*２.上下から出す*/
+}
+
+.global-nav .nav-item a:hover::after {
+  /* １ */
+  -webkit-transform: scale(1, 1);
+          transform: scale(1, 1);
+  -webkit-transform-origin: left top;
+          transform-origin: left top;
+  /* 出方 */
+  /* ２ */
+}
+/*# sourceMappingURL=global_nav.css.map */

@@ -1,0 +1,45 @@
+.global-nav {
+  max-width: 1000px;
+  display: flex;
+  .nav-item{
+    height: 50px;
+    width: 200px;
+    line-height: 50px;
+    text-align: center;
+    a {
+      position: relative;
+      display: inline-block;
+      &::after {
+        position: absolute;
+        left: 0;
+        content: '';
+        width: 100%;
+        height: 2px;
+        background: #333;
+
+        /*１.左右真ん中から出す*/
+        bottom: 2px;
+        transition: transform .3s;
+        transform: scale(0, 1);
+        transform-origin: right top; /*消え方*/
+
+        /*２.上下から出す*/
+        // transition: .3s;
+        // bottom: 10px;
+        // opacity: 0;
+        // visibility: hidden;
+      }
+      &:hover::after {
+      /* １ */
+      transform: scale(1, 1);
+      transform-origin: left top; /* 出方 */
+
+      /* ２ */
+      // bottom: -1px;
+      // opacity: 1;
+      // visibility: visible;
+      // transform: rotate(360deg) /* 回転 */
+      }
+    }
+  }
+}
