@@ -1,0 +1,623 @@
+@charset "UTF-8";
+.slide {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+}
+
+.slide img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 100%;
+  height: auto;
+  opacity: 0;
+}
+
+@-webkit-keyframes thumb1 {
+  0% {
+    -webkit-filter: grayscale(0%);
+            filter: grayscale(0%);
+  }
+  6% {
+    -webkit-filter: grayscale(100%);
+            filter: grayscale(100%);
+  }
+  10% {
+    -webkit-filter: grayscale(100%);
+            filter: grayscale(100%);
+  }
+  28% {
+    -webkit-filter: grayscale(100%);
+            filter: grayscale(100%);
+  }
+  37% {
+    -webkit-filter: grayscale(0%);
+            filter: grayscale(0%);
+  }
+  100% {
+    -webkit-filter: grayscale(0%);
+            filter: grayscale(0%);
+  }
+}
+
+@keyframes thumb1 {
+  0% {
+    -webkit-filter: grayscale(0%);
+            filter: grayscale(0%);
+  }
+  6% {
+    -webkit-filter: grayscale(100%);
+            filter: grayscale(100%);
+  }
+  10% {
+    -webkit-filter: grayscale(100%);
+            filter: grayscale(100%);
+  }
+  28% {
+    -webkit-filter: grayscale(100%);
+            filter: grayscale(100%);
+  }
+  37% {
+    -webkit-filter: grayscale(0%);
+            filter: grayscale(0%);
+  }
+  100% {
+    -webkit-filter: grayscale(0%);
+            filter: grayscale(0%);
+  }
+}
+
+@-webkit-keyframes thumb2 {
+  0% {
+    -webkit-filter: grayscale(0%);
+            filter: grayscale(0%);
+  }
+  6% {
+    -webkit-filter: grayscale(100%);
+            filter: grayscale(100%);
+  }
+  10% {
+    -webkit-filter: grayscale(100%);
+            filter: grayscale(100%);
+  }
+  28% {
+    -webkit-filter: grayscale(100%);
+            filter: grayscale(100%);
+  }
+  37% {
+    -webkit-filter: grayscale(0%);
+            filter: grayscale(0%);
+  }
+  100% {
+    -webkit-filter: grayscale(0%);
+            filter: grayscale(0%);
+  }
+}
+
+@keyframes thumb2 {
+  0% {
+    -webkit-filter: grayscale(0%);
+            filter: grayscale(0%);
+  }
+  6% {
+    -webkit-filter: grayscale(100%);
+            filter: grayscale(100%);
+  }
+  10% {
+    -webkit-filter: grayscale(100%);
+            filter: grayscale(100%);
+  }
+  28% {
+    -webkit-filter: grayscale(100%);
+            filter: grayscale(100%);
+  }
+  37% {
+    -webkit-filter: grayscale(0%);
+            filter: grayscale(0%);
+  }
+  100% {
+    -webkit-filter: grayscale(0%);
+            filter: grayscale(0%);
+  }
+}
+
+@-webkit-keyframes thumb3 {
+  0% {
+    -webkit-filter: grayscale(0%);
+            filter: grayscale(0%);
+  }
+  6% {
+    -webkit-filter: grayscale(100%);
+            filter: grayscale(100%);
+  }
+  10% {
+    -webkit-filter: grayscale(100%);
+            filter: grayscale(100%);
+  }
+  28% {
+    -webkit-filter: grayscale(100%);
+            filter: grayscale(100%);
+  }
+  37% {
+    -webkit-filter: grayscale(0%);
+            filter: grayscale(0%);
+  }
+  100% {
+    -webkit-filter: grayscale(0%);
+            filter: grayscale(0%);
+  }
+}
+
+@keyframes thumb3 {
+  0% {
+    -webkit-filter: grayscale(0%);
+            filter: grayscale(0%);
+  }
+  6% {
+    -webkit-filter: grayscale(100%);
+            filter: grayscale(100%);
+  }
+  10% {
+    -webkit-filter: grayscale(100%);
+            filter: grayscale(100%);
+  }
+  28% {
+    -webkit-filter: grayscale(100%);
+            filter: grayscale(100%);
+  }
+  37% {
+    -webkit-filter: grayscale(0%);
+            filter: grayscale(0%);
+  }
+  100% {
+    -webkit-filter: grayscale(0%);
+            filter: grayscale(0%);
+  }
+}
+
+@-webkit-keyframes thumb4 {
+  0% {
+    -webkit-filter: grayscale(0%);
+            filter: grayscale(0%);
+  }
+  6% {
+    -webkit-filter: grayscale(100%);
+            filter: grayscale(100%);
+  }
+  10% {
+    -webkit-filter: grayscale(100%);
+            filter: grayscale(100%);
+  }
+  28% {
+    -webkit-filter: grayscale(100%);
+            filter: grayscale(100%);
+  }
+  37% {
+    -webkit-filter: grayscale(0%);
+            filter: grayscale(0%);
+  }
+  100% {
+    -webkit-filter: grayscale(0%);
+            filter: grayscale(0%);
+  }
+}
+
+@keyframes thumb4 {
+  0% {
+    -webkit-filter: grayscale(0%);
+            filter: grayscale(0%);
+  }
+  6% {
+    -webkit-filter: grayscale(100%);
+            filter: grayscale(100%);
+  }
+  10% {
+    -webkit-filter: grayscale(100%);
+            filter: grayscale(100%);
+  }
+  28% {
+    -webkit-filter: grayscale(100%);
+            filter: grayscale(100%);
+  }
+  37% {
+    -webkit-filter: grayscale(0%);
+            filter: grayscale(0%);
+  }
+  100% {
+    -webkit-filter: grayscale(0%);
+            filter: grayscale(0%);
+  }
+}
+
+@-webkit-keyframes slideshow1 {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  28% {
+    opacity: 1;
+  }
+  38% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes slideshow1 {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  28% {
+    opacity: 1;
+  }
+  38% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes slideshow2 {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  28% {
+    opacity: 1;
+  }
+  38% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes slideshow2 {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  28% {
+    opacity: 1;
+  }
+  38% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes slideshow3 {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  28% {
+    opacity: 1;
+  }
+  38% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes slideshow3 {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  28% {
+    opacity: 1;
+  }
+  38% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes slideshow4 {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  28% {
+    opacity: 1;
+  }
+  38% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes slideshow4 {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  28% {
+    opacity: 1;
+  }
+  38% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.thumbnail {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0;
+  margin-top: 30px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+.thumbnail img {
+  display: block;
+  width: 200px;
+  height: 100px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin: 10px;
+  cursor: pointer;
+}
+
+/*ページを開いたとき＆一つ目のサムネイルをクリックしたとき*/
+#img1:checked ~ .thumbnail label[for="img1"] img {
+  -webkit-animation: thumb1 24s linear infinite both;
+          animation: thumb1 24s linear infinite both;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  cursor: auto;
+}
+
+#img1:checked ~ .thumbnail label[for="img2"] img {
+  -webkit-animation: thumb1 24s linear infinite both;
+          animation: thumb1 24s linear infinite both;
+  -webkit-animation-delay: 6s;
+          animation-delay: 6s;
+}
+
+#img1:checked ~ .thumbnail label[for="img3"] img {
+  -webkit-animation: thumb1 24s linear infinite both;
+          animation: thumb1 24s linear infinite both;
+  -webkit-animation-delay: 12s;
+          animation-delay: 12s;
+}
+
+#img1:checked ~ .thumbnail label[for="img4"] img {
+  -webkit-animation: thumb1 24s linear infinite both;
+          animation: thumb1 24s linear infinite both;
+  -webkit-animation-delay: 18s;
+          animation-delay: 18s;
+}
+
+#img1:checked ~ .slide img {
+  -webkit-animation: slideshow1 24s linear infinite;
+          animation: slideshow1 24s linear infinite;
+}
+
+#img1:checked ~ .slide img:nth-child(1) {
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+
+#img1:checked ~ .slide img:nth-child(2) {
+  -webkit-animation-delay: 6s;
+          animation-delay: 6s;
+}
+
+#img1:checked ~ .slide img:nth-child(3) {
+  -webkit-animation-delay: 12s;
+          animation-delay: 12s;
+}
+
+#img1:checked ~ .slide img:nth-child(4) {
+  -webkit-animation-delay: 18s;
+          animation-delay: 18s;
+}
+
+/*二つ目のサムネイルをクリックしたとき*/
+#img2:checked ~ .thumbnail label[for="img1"] img {
+  -webkit-animation: thumb2 24s linear infinite both;
+          animation: thumb2 24s linear infinite both;
+  -webkit-animation-delay: 18s;
+          animation-delay: 18s;
+}
+
+#img2:checked ~ .thumbnail label[for="img2"] img {
+  -webkit-animation: thumb2 24s linear infinite both;
+          animation: thumb2 24s linear infinite both;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  cursor: auto;
+}
+
+#img2:checked ~ .thumbnail label[for="img3"] img {
+  -webkit-animation: thumb2 24s linear infinite both;
+          animation: thumb2 24s linear infinite both;
+  -webkit-animation-delay: 6s;
+          animation-delay: 6s;
+}
+
+#img2:checked ~ .thumbnail label[for="img4"] img {
+  -webkit-animation: thumb2 24s linear infinite both;
+          animation: thumb2 24s linear infinite both;
+  -webkit-animation-delay: 12s;
+          animation-delay: 12s;
+}
+
+#img2:checked ~ .slide img {
+  -webkit-animation: slideshow2 24s linear infinite;
+          animation: slideshow2 24s linear infinite;
+}
+
+#img2:checked ~ .slide img:nth-child(1) {
+  -webkit-animation-delay: 18s;
+          animation-delay: 18s;
+}
+
+#img2:checked ~ .slide img:nth-child(2) {
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+
+#img2:checked ~ .slide img:nth-child(3) {
+  -webkit-animation-delay: 6s;
+          animation-delay: 6s;
+}
+
+#img2:checked ~ .slide img:nth-child(4) {
+  -webkit-animation-delay: 12s;
+          animation-delay: 12s;
+}
+
+/*三つ目のサムネイルをクリックしたとき*/
+#img3:checked ~ .thumbnail label[for="img1"] img {
+  -webkit-animation: thumb3 24s linear infinite both;
+          animation: thumb3 24s linear infinite both;
+  -webkit-animation-delay: 12s;
+          animation-delay: 12s;
+}
+
+#img3:checked ~ .thumbnail label[for="img2"] img {
+  -webkit-animation: thumb3 24s linear infinite both;
+          animation: thumb3 24s linear infinite both;
+  -webkit-animation-delay: 18s;
+          animation-delay: 18s;
+}
+
+#img3:checked ~ .thumbnail label[for="img3"] img {
+  -webkit-animation: thumb3 24s linear infinite both;
+          animation: thumb3 24s linear infinite both;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  cursor: auto;
+}
+
+#img3:checked ~ .thumbnail label[for="img4"] img {
+  -webkit-animation: thumb3 24s linear infinite both;
+          animation: thumb3 24s linear infinite both;
+}
+
+#img3:checked ~ .slide img {
+  -webkit-animation: slideshow3 24s linear infinite;
+          animation: slideshow3 24s linear infinite;
+}
+
+#img3:checked ~ .slide img:nth-child(1) {
+  -webkit-animation-delay: 12s;
+          animation-delay: 12s;
+}
+
+#img3:checked ~ .slide img:nth-child(2) {
+  -webkit-animation-delay: 18s;
+          animation-delay: 18s;
+}
+
+#img3:checked ~ .slide img:nth-child(3) {
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+
+#img4:checked ~ .slide img:nth-child(4) {
+  -webkit-animation-delay: 6s;
+          animation-delay: 6s;
+}
+
+/*四つ目のサムネイルをクリックしたとき*/
+#img4:checked ~ .thumbnail label[for="img1"] img {
+  -webkit-animation: thumb4 24s linear infinite both;
+          animation: thumb4 24s linear infinite both;
+  -webkit-animation-delay: 6s;
+          animation-delay: 6s;
+}
+
+#img4:checked ~ .thumbnail label[for="img2"] img {
+  -webkit-animation: thumb4 24s linear infinite both;
+          animation: thumb4 24s linear infinite both;
+  -webkit-animation-delay: 12s;
+          animation-delay: 12s;
+}
+
+#img4:checked ~ .thumbnail label[for="img3"] img {
+  -webkit-animation: thumb4 18s linear infinite both;
+          animation: thumb4 18s linear infinite both;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+
+#img4:checked ~ .thumbnail label[for="img4"] img {
+  -webkit-animation: thumb4 24s linear infinite both;
+          animation: thumb4 24s linear infinite both;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  cursor: auto;
+}
+
+#img4:checked ~ .slide img {
+  -webkit-animation: slideshow4 24s linear infinite;
+          animation: slideshow4 24s linear infinite;
+}
+
+#img4:checked ~ .slide img:nth-child(1) {
+  -webkit-animation-delay: 6s;
+          animation-delay: 6s;
+}
+
+#img4:checked ~ .slide img:nth-child(2) {
+  -webkit-animation-delay: 12s;
+          animation-delay: 12s;
+}
+
+#img4:checked ~ .slide img:nth-child(3) {
+  -webkit-animation-delay: 18s;
+          animation-delay: 18s;
+}
+
+#img4:checked ~ .slide img:nth-child(4) {
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+/*# sourceMappingURL=thumbnail-slider.css.map */
