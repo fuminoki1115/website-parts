@@ -1,0 +1,75 @@
+
+.sakura {
+  position: absolute;
+  top: -300px;
+  width: 100%;
+  height: 100%;
+  li img {
+    position: absolute;
+    display: block;
+    -webkit-animation: sakura linear infinite;
+    animation: sakura linear infinite;
+    animation-delay: 0s;
+    animation-duration: 26s;
+    right: 0;
+  }
+  li:nth-child(2) img{
+    right: 30%;
+    animation-delay: 4s;
+    animation-duration: 30s;
+  }
+  li:nth-child(3) img{
+    right: 60%;
+    animation-delay: 8s;
+    animation-duration: 20s;
+  }
+  li:nth-child(4) img{
+    right: -10%;
+    animation-delay: 10s;
+    animation-duration: 25s;
+  }
+  li:nth-child(5) img{
+    right: 25%;
+    animation-delay: 12s;
+    animation-duration: 20s;
+  }
+  li:nth-child(6) img{
+    right: 50%;
+    animation-delay: 14s;
+    animation-duration: 30s;
+  }
+  li:nth-child(7) img{
+    right: 5%;
+    animation-delay: 18s;
+    animation-duration: 30s;
+  }
+  li:nth-child(8) img{
+    right: 35%;
+    animation-delay: 20s;
+    animation-duration: 35s;
+  }
+}
+
+@keyframes sakura {
+  0% {
+    transform: translate3d(0);
+    opacity: 0.9;
+    z-index: 11;
+  }
+  20% {
+   opacity: 0.5
+  }
+  40% {
+    opacity: 1
+  }
+  60% {
+    opacity: 0.3
+  }
+  80% {
+    opacity: 0.8
+  }
+  100% {
+    transform: translate3d(-100vh, 120vh, -3rem);
+    opacity: 0;
+  }
+}
