@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>スクロールすると、後からナビゲーションが追いかけてくる</title>
+  <title>1と挙動は同じ、コードが少し違う</title>
 </head>
 <link rel="stylesheet" href="../../css/reset.css">
 <link rel="stylesheet" href="../../css/style.css">
@@ -59,32 +59,15 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script type="text/javascript">
   $(function() {
-    var nav = $('.nav');
-    //表示位置
-    var navTop = nav.offset().top+350;
-    //ナビゲーションの高さ（シャドウの分だけ足している）
-    var navHeight = nav.height()+10;
-    var showFlag = false;
-    nav.css('top', -navHeight+'px');
-    //ナビゲーションの位置まできたら表示
-    $(window).scroll(function () {
-        var winTop = $(this).scrollTop();
-        if (winTop >= navTop) {
-            if (showFlag == false) {
-                showFlag = true;
-                nav
-                    .addClass('fixed')
-                    .stop().animate({'top' : '0px'}, 200);
-            }
-        } else if (winTop <= navTop) {
-            if (showFlag) {
-                showFlag = false;
-                nav.stop().animate({'top' : -navHeight+'px'}, 200, function(){
-                    nav.removeClass('fixed');
-                });
-            }
-        }
-    });
+  var menu = $('.global-nav'),
+  offset = menu.offset();
+  $(window).scroll(function () {
+    if($(window).scrollTop() > offset.top) {
+      menu.addClass('fixed');
+    } else {
+      menu.removeClass('fixed');
+    }
+  });
 });
   </script>
   
