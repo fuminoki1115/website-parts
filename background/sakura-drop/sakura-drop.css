@@ -15,6 +15,7 @@
   -webkit-animation-duration: 26s;
           animation-duration: 26s;
   right: 0;
+  z-index: -999;
 }
 
 .sakura li:nth-child(2) img {

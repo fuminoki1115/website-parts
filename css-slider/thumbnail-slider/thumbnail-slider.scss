@@ -1,3 +1,9 @@
+$tablet: 760px;
+@mixin tablet {
+  @media (max-width: ($tablet)) {
+    @content;
+  }
+}
 
  input[type="radio"] {
   display: none;
@@ -20,18 +26,18 @@
 }
 
 .thumbnail {
-  list-style: none;
   display: flex;
-  padding: 0;
-  margin-top: 30px;
+  margin-top: 20px;
   justify-content: center;
   img {
   display: block;
-  width: 200px;
   height: 100px;
   object-fit: cover;
   margin: 10px;
   cursor: pointer;
+  @include tablet {
+    height: 60px;
+  }
  }
 }
 

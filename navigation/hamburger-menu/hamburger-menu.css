@@ -150,4 +150,8 @@
   -webkit-transition: all .3s;
   transition: all .3s;
 }
-/*# sourceMappingURL=hamburger-nav.css.map */
+
+.ham_item {
+  height: 50px;
+}
+/*# sourceMappingURL=hamburger-menu.css.map */

@@ -1,4 +1,8 @@
 @charset "UTF-8";
+header {
+  padding-top: 100px;
+}
+
 .global-nav {
   max-width: 1000px;
   display: -webkit-box;
@@ -48,4 +52,4 @@
   /* 出方 */
   /* ２ */
 }
-/*# sourceMappingURL=global-nav.css.map */
+/*# sourceMappingURL=underline.css.map */
