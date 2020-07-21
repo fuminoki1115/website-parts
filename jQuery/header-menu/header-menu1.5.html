@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>スクロールすると上部にナビゲーションが固定される</title>
+  <title>ヘッダーメニュー１.５(1と挙動は同じ、コードが少し違う)</title>
 </head>
 <link rel="stylesheet" href="../../css/reset.css">
 <link rel="stylesheet" href="../../css/style.css">
@@ -46,7 +46,6 @@
       <li class="nav-item"><a href="#">ABOUT</a></li>
       <li class="nav-item"><a href="#">BLOG</a></li>
       <li class="nav-item"><a href="#">CONTACT</a></li>
-      <li class="nav-item"><a href="#">THANKS</a></li>
     </ul>
   </nav>
 </header>
@@ -59,20 +58,16 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script type="text/javascript">
   $(function() {
-      var nav = $('.nav');
-      //navの位置    
-      var navTop = nav.offset().top;
-      //スクロールするたびに実行
-      $(window).scroll(function () {
-          var winTop = $(this).scrollTop();
-          //スクロール位置がnavの位置より下だったらクラスfixedを追加
-          if (winTop >= navTop) {
-              nav.addClass('fixed')
-          } else if (winTop <= navTop) {
-              nav.removeClass('fixed')
-          }
-      });
+  var menu = $('.global-nav'),
+  offset = menu.offset();
+  $(window).scroll(function () {
+    if($(window).scrollTop() > offset.top) {
+      menu.addClass('fixed');
+    } else {
+      menu.removeClass('fixed');
+    }
   });
+});
   </script>
   
 </body>

@@ -5,7 +5,7 @@ body {
 .foot-nav {
   width: 100%;
   line-height: 20px;
-  top: calc(100vh - 60px);
+  bottom: 10px;
   position: fixed;
 }
 
