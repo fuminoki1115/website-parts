@@ -4,10 +4,14 @@ header {
 }
 
 .global-nav {
-  max-width: 1000px;
+  max-width: 1050px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0 auto;
 }
 
 .global-nav .nav-item {
@@ -28,7 +32,7 @@ header {
   content: '';
   width: 100%;
   height: 2px;
-  background: #333;
+  background: #56C4F1;
   /*１.左右真ん中から出す*/
   bottom: 10px;
   -webkit-transition: -webkit-transform .3s;
