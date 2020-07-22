@@ -1,7 +1,7 @@
 .slide {
   position: relative;
   overflow: hidden;
-  margin: 0 auto;
+  margin: 10px auto 0;
   max-width: 1000px;
   width: 100%;
   height: 500px;
@@ -79,4 +79,4 @@
     opacity: 0;
   }
 }
-/*# sourceMappingURL=css-auto-slider.css.map */
+/*# sourceMappingURL=zoom-slider.css.map */

@@ -5,9 +5,12 @@ input[type="radio"] {
 
 .slide {
   position: relative;
-  width: 100%;
+  top: 0;
+  left: 0;
+  max-width: 1050px;
   height: 500px;
   overflow: hidden;
+  margin: 10px auto 0;
 }
 
 .slide img {
@@ -17,18 +20,26 @@ input[type="radio"] {
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   width: 100%;
-  height: auto;
+  height: 500px;
   opacity: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .thumbnail {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-top: 20px;
+  margin-top: 10px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+@media (max-width: 540px) {
+  .thumbnail {
+    margin-top: 5px;
+  }
 }
 
 .thumbnail img {
@@ -42,7 +53,14 @@ input[type="radio"] {
 
 @media (max-width: 760px) {
   .thumbnail img {
-    height: 60px;
+    height: 70px;
+  }
+}
+
+@media (max-width: 760px) and (max-width: 540px) {
+  .thumbnail img {
+    margin: 5px;
+    height: 45px;
   }
 }
 
