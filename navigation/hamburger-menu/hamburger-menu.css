@@ -108,8 +108,8 @@
 }
 
 .ham_checkbox:checked ~ .ham_icon .icon_parts1 {
-  -webkit-transform: rotate(315deg);
-  transform: rotate(315deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
   top: 0;
 }
 
@@ -121,8 +121,6 @@
 .ham_checkbox:checked ~ .ham_icon .icon_parts3 {
   -webkit-transform: rotate(-45deg);
   transform: rotate(-45deg);
-  -webkit-transform: rotate(405deg);
-  transform: rotate(405deg);
   top: 0;
 }
 

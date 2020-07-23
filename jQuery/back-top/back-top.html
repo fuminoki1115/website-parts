@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="noindex">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>バックトップ</title>
+    <link rel="stylesheet" href="../../css/reset.css" />
+    <link rel="stylesheet" href="../../css/style.css" />
+
+    <style>
+      .to-top {
+        position: fixed;
+        right: 30px;
+        bottom: 40px;
+        color: #fff;
+        background-color: #56c4f1;
+        width: 130px;
+        height: 30px;
+        cursor: pointer;
+        transition: 0.3s;
+        z-index: 11;
+        text-align: center;
+        line-height: 1.9;
+        border-radius: 5px;
+      }
+     
+    </style>
+  </head>
+  <body>
+    <p>フワッと出てくる</p>
+    <span class="to-top">back to top</span>
+
+    <p style="margin-top: 100vh;">sample</p>
+    <p style="margin-bottom: 200vh;">sample</p>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+    $(function() {
+        var topBtn = $('.to-top');
+        //ボタンを非表示にする
+        topBtn.hide();
+        //スクロールしてページトップから100に達したらボタンを表示
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 100) {
+                //フェードインで表示
+                topBtn.fadeIn();
+            } else {
+                //フェードアウトで非表示
+                topBtn.fadeOut();
+            }   
+        });
+        //スクロールしてトップへ戻る
+        $('.to-top, .back_wrap').click(function () {
+            $('body,html').animate({
+                scrollTop: 0
+            }, 700);
+            return false;
+        });
+      });
+    </script>
+  </body>
+</html>

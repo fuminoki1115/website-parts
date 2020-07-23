@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>バックトップ２</title>
+    <link rel="stylesheet" href="../../css/reset.css" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <style>
+      .to-top {
+        position: fixed;
+        right: 30px;
+        bottom: 40px;
+        color: #fff;
+        background-color: #56c4f1;
+        width: 100px;
+        height: 30px;
+        cursor: pointer;
+        transition: 0.3s;
+        z-index: 11;
+        text-align: center;
+        line-height: 1.9;
+        border-radius: 5px;
+      }
+      footer {
+        height: 300px;
+        background-color: #56c4f1;
+      }
+    </style>
+  </head>
+  <body>
+    
+    <span class="to-top">back to top</span>
+
+    <p>ふわっと出てきて、フッターになると消える</p>
+    <p style="margin-top: 100vh;">sample</p>
+    <p style="margin-bottom: 200vh;">sample</p>
+
+    <footer></footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+      $(function() {
+        var topBtn = $('.to-top');
+        //ボタンを非表示にする
+        topBtn.hide();
+        //スクロールしてページトップから100に達したらボタンを表示
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 100) {
+                //フェードインで表示
+                topBtn.fadeIn();
+            } else {
+                //フェードアウトで非表示
+                topBtn.fadeOut();
+            }   
+        });
+        //フッター手前でボタンを止める
+        $(window).scroll(function () {
+            var height = $(document).height(); //ドキュメントの高さ 
+            var position = $(window).height() + $(window).scrollTop(); //ページトップから現在地までの高さ
+            var footer = $("footer").height(); //フッターの高さ
+            if ( height - position  < footer ) { 
+                topBtn.css({
+                  position : "absolute",
+                  top : -100
+                });
+            } else { 
+                topBtn.css({
+                  position : "fixed",
+                  top: "auto"
+                });
+            }
+        });
+        //スクロールしてトップへ戻る
+        $('.to-top, .back_wrap').click(function () {
+            $('body,html').animate({
+                scrollTop: 0
+            }, 700);
+            return false;
+        });
+      });
+    </script>
+  </body>
+</html>
