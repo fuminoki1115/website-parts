@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>スクロールフラッフィー</title>
+  <link rel="stylesheet" href="../../css/reset.css">
+  <link rel="stylesheet" href="../../css/style.css">
+  <style>
+
+.element {
+  opacity: 0; 
+  visibility: hidden;
+  transition: all 1s;
+  }
+  .box {
+  margin: 0px auto;
+  width: 200px;
+  height: 200px;
+  background-color: #56c4f1;
+  }
+  .fadein-bottom {
+  transform: translateY(200px);
+  }
+  .fadein-bottom.is-show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0px);
+  }
+
+  </style>
+</head>
+<body>
+  
+  <p style="margin-top:30vh">ゆっくりスクロールしてください</p>
+  <p style="margin-bottom:30vh"></p>
+  
+  
+  <div class="box element fadein-bottom"></div>
+  <div class="box element fadein-bottom"></div>
+  <div class="box element fadein-bottom"></div>
+  <div class="box element fadein-bottom"></div>
+  <div class="box element fadein-bottom" style="margin-bottom:30vh">last</div>
+  
+  <script>
+    /* 到達したら要素を表示させる */
+      function showElementAnimation() {
+                    
+        let elementB = document.getElementsByClassName('fadein-bottom');
+       
+        if(!elementB) return; // 要素がなかったら処理をキャンセル
+                            
+        let showTiming = window.innerHeight > 768 ? 200 : 80; // 要素が出てくるタイミングはここで調整
+        let scrollY = window.pageYOffset; //スクロール量を取得
+        let windowH = window.innerHeight; //ブラウザウィンドウのビューポート(viewport)の高さを取得
+
+        for(let i=0;i<elementB.length;i++) { 
+          let elemClientRectR = elementB[i].getBoundingClientRect(); 
+          let elemY = scrollY + elemClientRectR.top; 
+          if(scrollY + windowH - showTiming > elemY) {
+            elementB[i].classList.add('is-show');
+          } else if(scrollY + windowH < elemY) {
+          }
+        }
+      }
+      showElementAnimation();
+      window.addEventListener('scroll', showElementAnimation);
+  </script>
+  <noscript>
+    <style>      
+      .fadein-bottom {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0px);
+      }     
+    </style>
+  </noscript>
+ 
+</body>
+</html>

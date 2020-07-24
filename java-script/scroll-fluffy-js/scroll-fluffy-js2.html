@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>スクロールフラッフィー２</title>
+  <style>
+
+  .element {
+  margin: 500px auto;
+  width: 300px;
+  height: 300px;
+  background-color: #56c4f1;
+  opacity: 0; 
+  visibility: hidden;
+  transition: all 1s;
+  }
+  .fadein-bottom {
+  transform: translateY(200px);
+  }
+  .fadein-top {
+  transform: translateY(-200px);
+  }
+  .fadein-right {
+  transform: translateX(200px);
+  }
+  .fadein-left {
+  transform: translateX(-200px);
+  }
+
+  .fadein-bottom.is-show,
+  .fadein-top.is-show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0px);
+  }
+  .fadein-right.is-show,
+  .fadein-left.is-show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0px);
+  }
+
+
+  </style>
+</head>
+<body>
+  <div class="element fadein-top">上から</div>
+  <div class="element fadein-bottom">下から</div>
+  <div class="element fadein-left">左から</div>
+  <div class="element fadein-right">右から</div>
+ 
+
+  <script>
+    /* 到達したら要素を表示させる */
+      function showElementAnimation() {
+                    
+        let elementB = document.getElementsByClassName('fadein-bottom');
+        let elementT = document.getElementsByClassName('fadein-top');
+        let elementR = document.getElementsByClassName('fadein-right');
+        let elementL = document.getElementsByClassName('fadein-left');
+        if(!elementB) return; // 要素がなかったら処理をキャンセル
+        if(!elementT) return; 
+        if(!elementR) return; 
+        if(!elementL) return; 
+                            
+        let showTiming = window.innerHeight > 768 ? 200 : 80; // 要素が出てくるタイミングはここで調整
+        let scrollY = window.pageYOffset; //スクロール量を取得
+        let windowH = window.innerHeight; //ブラウザウィンドウのビューポート(viewport)の高さを取得
+
+        for(let i=0;i<elementB.length;i++) { 
+          let elemClientRectR = elementB[i].getBoundingClientRect(); 
+          let elemY = scrollY + elemClientRectR.top; 
+          if(scrollY + windowH - showTiming > elemY) {
+            elementB[i].classList.add('is-show');
+          } else if(scrollY + windowH < elemY) {
+          // 上にスクロールして再度非表示にする場合はこちらを記述
+            elementB[i].classList.remove('is-show');
+          }
+        }
+
+        for(let i=0;i<elementT.length;i++) { 
+          let elemClientRectR = elementT[i].getBoundingClientRect(); 
+          let elemY = scrollY + elemClientRectR.top; 
+          if(scrollY + windowH - showTiming > elemY) {
+            elementT[i].classList.add('is-show');
+          } else if(scrollY + windowH < elemY) {
+          // 上にスクロールして再度非表示にする場合はこちらを記述
+            elementT[i].classList.remove('is-show');
+          }
+        }
+                          
+        for(let i=0;i<elementR.length;i++) { 
+          let elemClientRectR = elementR[i].getBoundingClientRect(); 
+          let elemY = scrollY + elemClientRectR.top; 
+          if(scrollY + windowH - showTiming > elemY) {
+            elementR[i].classList.add('is-show');
+          } else if(scrollY + windowH < elemY) {
+          // 上にスクロールして再度非表示にする場合はこちらを記述
+            elementR[i].classList.remove('is-show');
+          }
+        }
+
+        for(let i=0;i<elementL.length;i++) { 
+          let elemClientRectR = elementL[i].getBoundingClientRect(); 
+          let elemY = scrollY + elemClientRectR.top; 
+          if(scrollY + windowH - showTiming > elemY) {
+            elementL[i].classList.add('is-show');
+          } else if(scrollY + windowH < elemY) {
+          // 上にスクロールして再度非表示にする場合はこちらを記述
+            elementL[i].classList.remove('is-show');
+          }
+        }
+        
+      }
+      showElementAnimation();
+      window.addEventListener('scroll', showElementAnimation);
+  </script>
+  <noscript>
+    <style>
+      
+      .fadein-bottom,
+      .fadein-top {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0px);
+      }
+      .fadein-left,
+      .fadein-right {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(0px);
+      }
+    </style>
+  </noscript>
+ 
+</body>
+</html>

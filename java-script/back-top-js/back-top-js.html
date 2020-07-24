@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="noindex" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>バックトップjs</title>
+    <link rel="stylesheet" href="../../css/reset.css" />
+    <link rel="stylesheet" href="../../css/style.css" />
+
+    <style>
+      .scroll-top {
+        position: fixed;
+        right: 30px;
+        bottom: 40px;
+        color: #fff;
+        background-color: #56c4f1;
+        width: 130px;
+        height: 30px;
+        cursor: pointer;
+        transition: 0.3s;
+        z-index: 11;
+        text-align: center;
+        line-height: 1.9;
+        border-radius: 5px;
+        font-family: inherit;
+        -webkit-appearance: none;
+        transition: all 0.3s;
+        border: none;
+      }
+      .scroll-top:focus {
+        outline: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="scroll-top" id="js-button">back to top</button>
+
+    <p style="margin-top: 100vh;">sample</p>
+    <p style="margin-bottom: 200vh;">sample</p>
+
+    <script>
+      scrollTop("js-button", 500);
+      function scrollTop(elem, duration) {
+        let target = document.getElementById(elem);
+        target.addEventListener("click", function () {
+          let currentY = window.pageYOffset;
+          let step = duration / currentY > 1 ? 10 : 100;
+          let timeStep = (duration / currentY) * step;
+          let intervalID = setInterval(scrollUp, timeStep);
+
+          function scrollUp() {
+            currentY = window.pageYOffset;
+            if (currentY === 0) {
+              clearInterval(intervalID);
+            } else {
+              scrollBy(0, -step);
+            }
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
