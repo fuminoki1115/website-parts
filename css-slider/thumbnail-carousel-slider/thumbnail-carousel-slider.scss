@@ -40,13 +40,13 @@ $mobile: 540px;
     height: 100%;
     &:first-of-type {
       z-index: 1;
-      .meta {
+      .slide-content {
         transform: translateX(0);
         filter: blur(0);
         opacity: 1;
       }
     }
-    .meta {
+    .slide-content {
       position: absolute;
       top: 50%;
       left: 0;
@@ -71,12 +71,12 @@ $mobile: 540px;
     &:target {
       z-index: 3;
       animation: show 1s;
-      .meta {
-        animation: showMeta 1s ease .9s forwards;
+      .slide-content {
+        animation: showContent 1s ease .9s forwards;
       }
       &:first-of-type {
         z-index: 3;
-        .meta {
+        .slide-content {
           transform: translateX(-50px);
           filter: blur(5px);
           opacity: 0;
@@ -157,7 +157,7 @@ $mobile: 540px;
   }
 }
 
-@keyframes showMeta {
+@keyframes showContent {
   0% {
     transform: translateX(-50px);
     filter: blur(5px);

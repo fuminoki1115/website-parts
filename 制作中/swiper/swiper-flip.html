@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../../css/reset.css" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <link rel="stylesheet" href="min/swiper.min.css" />
+    <link rel="stylesheet" href="swiper-custom.css" />
+    <style>
+      .swiper-slide-active h2 {
+        animation: t-top 1s ease-in-out 0.5s forwards;
+      }
+      .swiper-slide-active p {
+        animation: b-bottom 1s ease-in-out 0.5s forwards;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="swiper-container slider">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="../../images/1.jpg" alt="" />
+          <div class="slider-content">
+            <h2>素数とは 1より大きい自然数である</h2>
+            <p>
+              素数（そすう）とは、1と自分自身以外に正の約数を持たない自然数で、1でない数のことである。ユークリッドの著書『原論』によって素数が無数に存在することが証明されている。
+            </p>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <img src="../../images/2.jpg" alt="" />
+          <div class="slider-content">
+            <h2>素数とは 1より大きい自然数である</h2>
+            <p>
+              素数（そすう）とは、1と自分自身以外に正の約数を持たない自然数で、1でない数のことである。ユークリッドの著書『原論』によって素数が無数に存在することが証明されている。
+            </p>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <img src="../../images/3.jpg" alt="" />
+          <div class="slider-content">
+            <h2>素数とは 1より大きい自然数である</h2>
+            <p>
+              素数（そすう）とは、1と自分自身以外に正の約数を持たない自然数で、1でない数のことである。ユークリッドの著書『原論』によって素数が無数に存在することが証明されている。
+            </p>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <img src="../../images/4.jpg" alt="" />
+          <div class="slider-content">
+            <h2>素数とは 1より大きい自然数である</h2>
+            <p>
+              素数（そすう）とは、1と自分自身以外に正の約数を持たない自然数で、1でない数のことである。ユークリッドの著書『原論』によって素数が無数に存在することが証明されている。
+            </p>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <img src="../../images/5.jpg" alt="" />
+          <div class="slider-content">
+            <h2>素数とは 1より大きい自然数である</h2>
+            <p>
+              素数（そすう）とは、1と自分自身以外に正の約数を持たない自然数で、1でない数のことである。ユークリッドの著書『原論』によって素数が無数に存在することが証明されている。
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+
+    <script src="min/swiper.min.js"></script>
+    <script>
+      //スライダー
+      var mainSlider = new Swiper(".slider", {
+        centeredSlides: true,
+        speed: 900,
+        loop: true,
+        slidesPerView: 1,
+        effect: "flip",
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          type: "bullets",
+          clickable: true,
+        },
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false,
+        },
+      });
+    </script>
+  </body>
+</html>
