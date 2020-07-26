@@ -35,11 +35,29 @@
       .thumbnail {
         height: 500px;
         max-width: 250px;
+        cursor: pointer;
       }
+
+      .thumbnail .swiper-slide {
+        overflow: hidden;
+      }
+      .thumbnail .swiper-slide:hover img {
+        transition: all .5s;
+        transform: scale(1.2);
+       
+
+      } 
       @media (max-width: 770px) {
-        .thumbnail {
-          display: none;
+        .swiper-flex {
+          flex-direction: column;
         }
+        .thumbnail {
+          max-width: 1050px;
+        }
+        .thumbnail .swiper-slide {
+        height: 100px;
+       
+      }
       }
     </style>
   </head>
@@ -126,8 +144,6 @@
         loop: true,
         slidesPerView: 1,
         effect: "slide",
-        direction: "vertical",
-
         pagination: {
           el: ".swiper-pagination",
           type: "bullets",
@@ -137,15 +153,24 @@
           delay: 5000,
           disableOnInteraction: false,
         },
+        breakpoints: {
+          770: {
+            direction: "vertical",
+          },
+        }
       });
 
       // サムネイル
       var Thumbnail = new Swiper(".thumbnail", {
         slidesPerView: 5,
         loop: true,
-        // centeredSlides:true,
         slideToClickedSlide: true,
-        direction: "vertical",
+        breakpoints: {
+          770: {
+            direction: "vertical",
+          },
+        }
+        
       });
 
       // スライド遷移時にイベントが発生する slideChange というAPIを使用

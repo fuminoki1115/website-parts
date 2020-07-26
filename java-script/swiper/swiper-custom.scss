@@ -31,6 +31,7 @@ $mobile: 540px;
   --swiper-navigation-color: rgba(86, 196, 241, 0.5);
   @include mobile {
     top: 470px;
+    z-index: 11;
   }
 }
 .swiper-pagination-bullet {

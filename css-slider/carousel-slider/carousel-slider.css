@@ -17,23 +17,23 @@
   -o-object-fit: cover;
      object-fit: cover;
   vertical-align: bottom;
-  -webkit-animation: slideshow 24s linear infinite forwards;
-          animation: slideshow 24s linear infinite forwards;
+  -webkit-animation: slideshow 20s linear infinite forwards;
+          animation: slideshow 20s linear infinite forwards;
 }
 
 .slide img:nth-child(2) {
-  -webkit-animation-delay: 6s;
-          animation-delay: 6s;
+  -webkit-animation-delay: 5s;
+          animation-delay: 5s;
 }
 
 .slide img:nth-child(3) {
-  -webkit-animation-delay: 12s;
-          animation-delay: 12s;
+  -webkit-animation-delay: 10s;
+          animation-delay: 10s;
 }
 
 .slide img:nth-child(4) {
-  -webkit-animation-delay: 18s;
-          animation-delay: 18s;
+  -webkit-animation-delay: 15s;
+          animation-delay: 15s;
 }
 
 @-webkit-keyframes slideshow {
@@ -113,8 +113,8 @@
   left: 0%;
   opacity: 0;
   z-index: 10;
-  -webkit-animation: noslide 6s forwards;
-          animation: noslide 6s forwards;
+  -webkit-animation: noslide 5s forwards;
+          animation: noslide 5s forwards;
   position: relative;
 }
 /*# sourceMappingURL=carousel-slider.css.map */
