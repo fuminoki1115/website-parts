@@ -81,7 +81,6 @@
 .ham_menu {
   background: #ffffff;
   color: #000;
-  max-width: 100%;
   width: 200px;
   height: 100vh;
   overflow-y: auto;
