@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    #header {
+      background: #fff;
+      box-shadow: 0 4px 8px -3px rgba(17, 17, 17, 0.06);
+      height: 56px;
+      position: fixed;
+      top: 0;
+      transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      width: 100%;
+      z-index: 199999;
+    }
+
+    .head-animation {
+      transform: translateY(-100%);
+    }
+  </style>
+  <body>
+    <header id="header">サイト名やナビなどを書く</header>
+
+    <p style="margin-top: 200vh;">sample</p>
+    <p style="margin-top: 200vh;">sample</p>
+    <p style="margin-top: 200vh;">sample</p>
+
+    <script>
+      (function () {
+        const target = document.getElementById("header"),
+          height = 56;
+        let offset = 0,
+          lastPosition = 0,
+          ticking = false;
+
+        function onScroll() {
+          if (lastPosition > height) {
+            if (lastPosition > offset) {
+              target.classList.add("head-animation");
+            } else {
+              target.classList.remove("head-animation");
+            }
+            offset = lastPosition;
+          }
+        }
+
+        window.addEventListener("scroll", function (e) {
+          lastPosition = window.scrollY;
+          if (!ticking) {
+            window.requestAnimationFrame(function () {
+              onScroll(lastPosition);
+              ticking = false;
+            });
+            ticking = true;
+          }
+        });
+      })();
+    </script>
+  </body>
+</html>

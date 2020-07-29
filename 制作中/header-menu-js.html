@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .header {
+        height: 50px;
+        background-color: #fff;
+        box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+      }
+      .global-nav {
+        position: absolute;
+        width: 100%;
+        z-index: 10;
+      }
+      .global-nav__list {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        justify-content: center;
+      }
+      .global-nav__list li {
+        padding: 0 14px;
+      }
+      .global-nav__list li a {
+        display: block;
+        height: 50px;
+        line-height: 50px;
+        color: #111;
+        text-decoration: none;
+      }
+      .global-nav.clone-nav {
+        position: fixed;
+        top: -100px;
+        left: 0;
+        transition: all 1s;
+        background-color: #fff;
+        box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+      }
+      .global-nav.clone-nav.is-fixed-nav {
+        top: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <header id="header" class="header">
+      <nav class="global-nav" id="js-global-nav">
+        <ul class="global-nav__list">
+          <li><a href="">メニュー1</a></li>
+          <li><a href="">メニュー2</a></li>
+          <li><a href="">メニュー3</a></li>
+          <li><a href="">メニュー4</a></li>
+          <li><a href="">メニュー5</a></li>
+        </ul>
+      </nav>
+    </header>
+    <p id="js-trigger" style="margin-top: 100vh;">sample</p>
+    <p id="js-trigger" style="margin-top: 100vh;">sample</p>
+    <p style="margin-top: 100vh;">sample</p>
+
+    <script>
+      function setCloneNav() {
+        var body = document.body;
+        var globalNav = document.getElementById("js-global-nav");
+
+        if (!globalNav) return;
+
+        var cloneNav = globalNav.cloneNode(true);
+        cloneNav.id = "js-clone-nav";
+        cloneNav.classList.add("clone-nav");
+
+        body.insertBefore(cloneNav, body.firstChild);
+      }
+      setCloneNav();
+
+      /**
+       * グローバルナビのクローンをページ上部に移動・固定
+       */
+      function fixedGlobalNav() {
+        var scrollY = window.pageYOffset;
+        var trigger = document.getElementById("js-trigger");
+        var cloneNav = document.getElementById("js-clone-nav");
+
+        if (!cloneNav || !trigger) return;
+
+        var triggerClientRect = trigger.getBoundingClientRect();
+        var triggerY = scrollY + triggerClientRect.top;
+        if (scrollY > triggerY) {
+          cloneNav.classList.add("is-fixed-nav");
+        } else {
+          cloneNav.classList.remove("is-fixed-nav");
+        }
+      }
+      window.addEventListener("scroll", fixedGlobalNav);
+    </script>
+  </body>
+</html>
