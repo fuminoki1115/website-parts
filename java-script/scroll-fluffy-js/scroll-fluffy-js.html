@@ -8,11 +8,7 @@
   <link rel="stylesheet" href="../../css/style.css">
   <style>
 
-.element {
-  opacity: 0; 
-  visibility: hidden;
-  transition: all 1s;
-  }
+
   .box {
   margin: 0px auto;
   width: 200px;
@@ -20,7 +16,10 @@
   background-color: #56c4f1;
   }
   .fadein-bottom {
-  transform: translateY(200px);
+    opacity: 0; 
+    visibility: hidden;
+    transition: all 1s;
+    transform: translateY(200px);
   }
   .fadein-bottom.is-show {
     opacity: 1;
@@ -59,8 +58,7 @@
           let elemY = scrollY + elemClientRectR.top; 
           if(scrollY + windowH - showTiming > elemY) {
             elementB[i].classList.add('is-show');
-          } else if(scrollY + windowH < elemY) {
-          }
+          } 
         }
       }
       showElementAnimation();
