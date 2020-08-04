@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="randoming"></div>
+<script>
+  let lists=[
+      '<img src="../../images/1.jpg" alt="" />',
+      '<img src="../../images/2.jpg" alt="" />',
+      '<img src="../../images/3.jpg" alt="" />',
+      '<img src="../../images/4.jpg" alt="" />',
+      '<img src="../../images/5.jpg" alt="" />'
+  ];
+
+	let rNo = Math.floor(Math.random() * lists.length);
+	document.getElementById('randoming').innerHTML = lists[rNo];
+</script>
+  
+</body>
+</html>

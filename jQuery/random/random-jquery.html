@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div>
+    <img id="randomimg">
+  </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+ let images = [
+  ['../../images/1.jpg', '画像1'],
+  ['../../images/2.jpg', '画像2'],
+  ['../../images/3.jpg', '画像3'],
+  ['../../images/4.jpg', '画像4'],
+  ['../../images/5.jpg', '画像5']
+];
+let randImg = images[Math.floor(Math.random() * images.length)];
+$('img#randomimg').attr({'src':randImg[0], 'alt':randImg[1]});
+
+</script>
+  
+</body>
+</html>
