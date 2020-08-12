@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ヘッダーメニュー</title>
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/style.css">
+  <style> 
+    .global-nav {
+      max-width: 1050px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      justify-content: center;
+      margin: 0 auto;
+    }
+  .global-nav .nav-item {
+    height: 50px;
+    width: 200px;
+    line-height: 50px;
+    text-align: center;
+  }   
+    .sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    width: 100%;
+  }
+
+  </style>
+</head>
+
+<body>
+  <div style="height:100px"></div>
+  <header class="sticky">
+    <nav class="nav">
+      <ul class="global-nav">
+        <li class="nav-item"><a href="#">HOME</a></li>
+        <li class="nav-item"><a href="#">ABOUT</a></li>
+        <li class="nav-item"><a href="#">BLOG</a></li>
+        <li class="nav-item"><a href="#">CONTACT</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <p style="margin-top: 100vh;">sample</p>
+  <p style="margin-bottom: 100vh;">sample</p>
+  
+
+</body>
+</html>
