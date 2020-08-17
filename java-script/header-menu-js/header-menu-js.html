@@ -3,12 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/style.css">
     <title>Document</title>
     <style>
       .header {
         height: 50px;
         background-color: #fff;
-        box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
       }
       .global-nav {
         position: absolute;
@@ -16,29 +17,26 @@
         z-index: 10;
       }
       .global-nav__list {
-        margin: 0;
-        padding: 0;
-        list-style: none;
         display: flex;
         justify-content: center;
+        max-width: 1050px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      margin: 0 auto;
       }
-      .global-nav__list li {
-        padding: 0 14px;
-      }
-      .global-nav__list li a {
-        display: block;
-        height: 50px;
-        line-height: 50px;
-        color: #111;
-        text-decoration: none;
-      }
+  .global-nav__list .nav-item {
+    height: 50px;
+    width: 200px;
+    line-height: 50px;
+    text-align: center;
+  }   
+      
       .global-nav.clone-nav {
         position: fixed;
         top: -100px;
         left: 0;
         transition: all 1s;
         background-color: #fff;
-        box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
       }
       .global-nav.clone-nav.is-fixed-nav {
         top: 0;
@@ -49,11 +47,12 @@
     <header id="header" class="header">
       <nav class="global-nav" id="js-global-nav">
         <ul class="global-nav__list">
-          <li><a href="">メニュー1</a></li>
-          <li><a href="">メニュー2</a></li>
-          <li><a href="">メニュー3</a></li>
-          <li><a href="">メニュー4</a></li>
-          <li><a href="">メニュー5</a></li>
+         
+              <li class="nav-item"><a href="#">HOME</a></li>
+              <li class="nav-item"><a href="#">ABOUT</a></li>
+              <li class="nav-item"><a href="#">BLOG</a></li>
+              <li class="nav-item"><a href="#">CONTACT</a></li>
+            
         </ul>
       </nav>
     </header>

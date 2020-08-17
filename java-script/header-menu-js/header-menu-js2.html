@@ -4,25 +4,50 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/style.css">
   </head>
   <style>
     #header {
       background: #fff;
-      box-shadow: 0 4px 8px -3px rgba(17, 17, 17, 0.06);
       height: 56px;
       position: fixed;
       top: 0;
       transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       width: 100%;
-      z-index: 199999;
+      z-index: 10;
     }
-
     .head-animation {
       transform: translateY(-100%);
     }
+    .global-nav {
+      max-width: 1050px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      justify-content: center;
+      margin: 0 auto;
+    }
+  .global-nav .nav-item {
+    height: 50px;
+    width: 200px;
+    line-height: 50px;
+    text-align: center;
+  }   
+
+
   </style>
   <body>
-    <header id="header">サイト名やナビなどを書く</header>
+    <header id="header">
+      <nav class="nav">
+        <ul class="global-nav">
+          <li class="nav-item"><a href="#">HOME</a></li>
+          <li class="nav-item"><a href="#">ABOUT</a></li>
+          <li class="nav-item"><a href="#">BLOG</a></li>
+          <li class="nav-item"><a href="#">CONTACT</a></li>
+        </ul>
+      </nav>
+    </header>
 
     <p style="margin-top: 200vh;">sample</p>
     <p style="margin-top: 200vh;">sample</p>
