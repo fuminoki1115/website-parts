@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>バックトップ</title>
+    <style>
+      .js-scroll-fadein {
+        transition: opacity 1s;
+        visibility: hidden;
+        opacity: 0;
+      }
+      .js-scroll-fadein.is-fadein {
+        visibility: visible;
+        opacity: 1;
+      }
+      .arrow {
+        position: fixed;
+        right: 12px;
+        bottom: 12px;
+        color: #333;
+        cursor: pointer;
+        background-color: #c4c4c4;
+        border-radius: 22px;
+        padding: 20px;
+        transition: all 0.2s ease-in-out;
+      }
+      .arrow:hover {
+        opacity: 0.8;
+        bottom: 15px;
+        box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.5);
+      }
+
+      .arrow::before,
+      .arrow::after {
+        content: "";
+        width: 12px;
+        height: 12px;
+        border-top: solid 3px #333;
+        border-right: solid 3px #333;
+        transform: rotate(-45deg);
+        position: absolute;
+        left: 14px;
+      }
+      .arrow::before {
+        top: 11px;
+      }
+      .arrow:after {
+        top: 21px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="js-scroll-fadein" class="js-scroll-fadein arrow"></div>
+    <div style="margin-top:200vh;">sample</div>
+    <div style="margin-bottom:200vh;">sample</div>
+
+    <script>
+      //スクロール量を取得する関数
+      function getScrolled() {
+        return window.pageYOffset !== undefined
+          ? window.pageYOffset
+          : document.documentElement.scrollTop;
+      }
+
+      //トップに戻るボタンの要素を取得
+      const topButton = document.getElementById("js-scroll-fadein");
+
+      //ボタンの表示・非表示
+      window.onscroll = function () {
+        getScrolled() > 500
+          ? topButton.classList.add("is-fadein")
+          : topButton.classList.remove("is-fadein");
+      };
+
+      //トップに移動する関数
+      function scrollToTop() {
+        const scrolled = getScrolled();
+        window.scrollTo(0, Math.floor(scrolled / 2));
+        if (scrolled > 0) {
+          window.setTimeout(scrollToTop, 30);
+        }
+      }
+
+      //イベント登録
+      topButton.onclick = function () {
+        scrollToTop();
+      };
+    </script>
+  </body>
+</html>

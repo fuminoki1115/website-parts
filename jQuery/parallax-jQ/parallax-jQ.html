@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+<body>
+  <div style="margin-top: 100vh">sample</div>
+  <div style="margin-top: 100px" class="para-item">sample</div>
+  <div style="margin-bottom: 100vh">sample</div>
+  
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script>
+ //初期設定
+var $window = $(window),
+    wh = window.innerHeight,
+    nowScroll = $window.scrollTop(),
+    reg = -3;//調整値、負の数だとスクロール時に上に動き、正の数だと下に動く。絶対値が大きいほど動く量が小さくなる。
+ 
+$window.on('load resize', function () {
+  wh = window.innerHeight;
+  nowScroll = $window.scrollTop();
+});
+window.addEventListener('scroll', function () {
+  nowScroll = $window.scrollTop();
+}, { passive: true });
+ 
+//トリガー
+var $paraItem = $('.para-item');
+if ($paraItem.length) {
+  parallax();
+  $window.on('load resize', parallax);
+  window.addEventListener('scroll', parallax);
+}
+ 
+//処理内容
+function parallax() {
+  $paraItem.each(function () {
+    var $this = $(this),
+      scroll_bottom = nowScroll + wh;
+    $this.css('transform', '');
+ 
+    var nowpos = $this.offset().top;
+    if (nowpos < scroll_bottom) {
+      $this.css('transform', 'translate(0,' + (scroll_bottom - nowpos) / reg + 'px)');
+    }
+  });
+}
+  </script>
+</body>
+</html>

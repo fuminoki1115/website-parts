@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rellax.js (スマホ表示で速度を変える)</title>
+  </head>
+  <body>
+    <div style="margin-top: 100vh;">sample</div>
+
+    <div>
+      <p class="rellax-target" data-rellax-zindex="2">
+        テストです
+      </p>
+      <p>
+        data-rellax-speed (-10〜10)<br />
+        プラスは下スクロールすると上へ、マイナスは下スクロールすると下へ移動。数値が大きいほどパララックス効果が強くスピードが早くなる。
+      </p>
+      <p>
+        data-rellax-zindex<br />
+        テキストや画像の重なる順番を決める。数字が大きいほど上に重なる。
+      </p>
+      <p>
+        data-rellax-percentage<br />
+        上下のどの位置にセットするかを決める。マイナスで下へ、プラスで上に配置。
+        スクロールを開始すると、パララックスを指定した要素はいっせいに動き出す。下にスクロースすればするほど、下にある要素は見えたい位置からズレてきてしまうため、ここで位置を調整する必要がある。<br />
+        （cssで調整してもOK）
+      </p>
+    </div>
+    <div style="margin-bottom: 100vh;">sample</div>
+
+    <script src="rellax.min.js"></script>
+    <script>
+      const rellax = new Rellax(".rellax-target"); //クラス名rellax-targetにパララックス効果
+
+      document.addEventListener("DOMContentLoaded", function () {
+        //【768px以下】という条件を格納
+        var widthCheck = window.matchMedia("screen and (max-width: 768px)");
+
+        function checkBreakPoint(widthCheck) {
+          if (widthCheck.matches) {
+            //768px以下なら
+            var rellax = new Rellax(".rellax-target", {
+              speed: 2, //速度遅め
+            });
+          } else {
+            //769px以上なら
+            var rellax = new Rellax(".rellax-target", {
+              speed: 5, //速度早め
+            });
+          }
+        }
+
+        // ブレイクポイントの瞬間に発火
+        widthCheck.addListener(checkBreakPoint);
+
+        // 初回チェックで発火
+        checkBreakPoint(widthCheck);
+      });
+    </script>
+  </body>
+</html>

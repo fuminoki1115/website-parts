@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ローディング</title>
+  <link rel="stylesheet" href="../../css/reset.css">
+  <link rel="stylesheet" href="../../css/style.css">
+
+  <style>
+    /* 非表示 */
+.is-hide {
+    display: none;
+}
+/* ローディング画面をフェードアウト */
+.fadeout-bg {
+    transition-property: opacity;
+    transition-delay: .9s;
+    transition-duration: .8s;
+    opacity: 0;
+    pointer-events: none;
+}
+/* ローダーをフェードアウト */
+.fadeout-loader {
+    transition-property: opacity;
+    transition-delay: .9s;
+    transition-duration: .3s;
+    opacity: 0;
+    pointer-events: none;
+}
+/* ローディング画面 */
+#loader-bg {
+    background: #ffffff;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+#loader {
+    height: 120px;
+    left: 50%;
+    margin-left: -60px;
+    margin-top: -60px;
+    position: fixed;
+    top: 50%;
+    width: 120px;
+}
+#loader p {
+    color: #454545;
+    font-size: 10px;
+    line-height: 1.4;
+    text-align: center;
+}
+#loader p img {
+    display: inline-block;
+}
+ 
+
+  </style>
+  
+</head>
+<body>
+
+  <div id="loader-bg" class="is-hide">
+    <div id="loader" class="is-hide">
+        <p><img src="../../images/loading.gif" alt=""><br>
+            NOW LOADING</p>
+    </div>
+</div>
+
+
+
+<script>
+ var bg = document.getElementById('loader-bg'),
+    loader = document.getElementById('loader');
+/* ロード画面の非表示を解除 */
+bg.classList.remove('is-hide');
+loader.classList.remove('is-hide');
+
+/* 読み込み完了 */
+window.addEventListener('load', stopload);
+
+/* 10秒経ったら強制的にロード画面を非表示にする */
+setTimeout('stopload()',10000);
+
+/* ロード画面を非表示にする処理 */
+function stopload(){
+    bg.classList.add('fadeout-bg');
+    loader.classList.add('fadeout-loader');
+}
+</script>
+  
+</body>
+</html>
+

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/style.css">
+  </head>
+  <style>
+    #header {
+      background: #fff;
+      height: 56px;
+      position: fixed;
+      bottom: 0;
+      transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      width: 100%;
+      z-index: 10;
+    }
+    .header-animation {
+      transform: translateY(100%);
+    }
+    .global-nav {
+      max-width: 1050px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      justify-content: center;
+      margin: 0 auto;
+    }
+  .global-nav .nav-item {
+    height: 50px;
+    width: 200px;
+    line-height: 50px;
+    text-align: center;
+  }   
+
+
+  </style>
+  <body>
+    <header id="header">
+      <nav class="nav">
+        <ul class="global-nav">
+          <li class="nav-item"><a href="#">HOME</a></li>
+          <li class="nav-item"><a href="#">ABOUT</a></li>
+          <li class="nav-item"><a href="#">BLOG</a></li>
+          <li class="nav-item"><a href="#">CONTACT</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <p style="margin-top: 200vh;">sample</p>
+    <p style="margin-top: 200vh;">sample</p>
+    <p style="margin-top: 200vh;">sample</p>
+
+    <script>
+      (function () {
+        const target = document.getElementById("header"),
+          height = 56;
+        let offset = 0,
+          lastPosition = 0,
+          ticking = false;
+
+        function onScroll() {
+          if (lastPosition > height) {
+            if (lastPosition > offset) {
+              target.classList.add("header-animation");
+            } else {
+              target.classList.remove("header-animation");
+            }
+            offset = lastPosition;
+          }
+        }
+
+        window.addEventListener("scroll", function (e) {
+          lastPosition = window.scrollY;
+          if (!ticking) {
+            window.requestAnimationFrame(function () {
+              onScroll(lastPosition);
+              ticking = false;
+            });
+            ticking = true;
+          }
+        });
+      })();
+    </script>
+  </body>
+</html>

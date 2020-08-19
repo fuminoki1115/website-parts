@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rellax.js (オプション指定)</title>
+  </head>
+  <body>
+    <div style="margin-top: 100vh;">sample</div>
+
+    <div>
+      <p
+        class="rellax-target"
+        data-rellax-speed="3"
+        data-rellax-zindex="5"
+      >
+        テストです
+      </p>
+      <p>
+        data-rellax-speed (-10〜10)<br />
+        プラスは下スクロールすると上へ、マイナスは下スクロールすると下へ移動。数値が大きいほどパララックス効果が強くスピードが早くなる。
+      </p>
+      <p>
+        data-rellax-zindex<br />
+        テキストや画像の重なる順番を決める。数字が大きいほど上に重なる。
+      </p>
+      <p>
+        data-rellax-percentage<br />
+        上下のどの位置にセットするかを決める。マイナスで下へ、プラスで上に配置。
+        スクロールを開始すると、パララックスを指定した要素はいっせいに動き出す。下にスクロースすればするほど、下にある要素は見えたい位置からズレてきてしまうため、ここで位置を調整する必要がある。<br />
+        （cssで調整してもOK）
+      </p>
+    </div>
+    <div style="margin-bottom: 100vh;">sample</div>
+
+    <script src="rellax.min.js"></script>
+    <script>
+      var rellax = new Rellax(".rellax-target", {
+        speed: -2, //速度
+        center: true, //センタリングdata-rellax-percentage="0.5" 
+        wrapper: null, //スクロールを監視する要素 指定しない場合はbodyになる
+        round: true, //公式に説明がない・・・若干、止まるときにイーズが効くような？
+        vertical: true, //縦パララックス
+        horizontal: false, //横パララックス
+      });
+    </script>
+  </body>
+</html>

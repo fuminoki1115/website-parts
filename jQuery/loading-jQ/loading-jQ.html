@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ローディング</title>
+  <link rel="stylesheet" href="../../css/reset.css">
+  <link rel="stylesheet" href="../../css/style.css">
+  <style>
+		/* 非表示 */
+.is-hide {
+    display: none;
+}
+/* LOADING */
+#loader-bg {
+  background: #ffffff;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+#loader {
+  height: 120px;
+  left: 50%;
+  margin-left: -60px;
+  margin-top: -60px;
+  position: fixed;
+  top: 50%;
+  width: 120px;
+}
+#loader p {
+    color: #454545;
+    font-size: 10px;
+    line-height: 1.4;
+    text-align: center;
+}
+#loader p img {
+    display: inline-block;
+}
+
+  </style>
+  
+</head>
+<body>
+	<div id="loader-bg" class="is-hide">
+    <div id="loader" class="is-hide">
+        <p>
+					<img src="../../images/loading.gif" alt=""><br>
+					NOW LOADING</p>
+    </div>
+	</div>
+ 
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+	var bg = $('#loader-bg'),
+    loader = $('#loader');
+/* ローディング画面の非表示を解除 */
+bg.removeClass('is-hide');
+loader.removeClass('is-hide');
+
+/* 読み込み完了 */
+$(window).on('load', stopload);
+
+/* 10秒経ったら強制的にローディング画面を非表示にする */
+setTimeout('stopload()',10000);
+
+/* ローディング画面を非表示にする処理 */
+function stopload(){
+    bg.delay(900).fadeOut(800);
+    loader.delay(900).fadeOut(300);
+}
+</script>
+
+  
+</body>
+</html>
+
