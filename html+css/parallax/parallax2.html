@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+		<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>パララックス</title>
+    <link rel="stylesheet" href="../../css/reset.css" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <style>
+      .parallax {
+        width: 100%;
+        min-height: 100vh;
+        background-position: center top;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        text-align: center;
+        padding: 60px;
+      }
+      .parallax.bg-01 {
+        background-image: url(../../images/1.jpg);
+      }
+      .parallax.bg-02 {
+        background-image: url(../../images/2.jpg);
+      }
+      .parallax.bg-03 {
+        background-image: url(../../images/3.jpg);
+      }
+
+      @media screen and (max-width: 575px) {
+        .parallax {
+          background-image: none !important;
+          height: 100%;
+        }
+        .parallax::before {
+          content: "";
+          display: block;
+          position: fixed;
+          top: 0;
+          left: 0;
+          -webkit-transform: translate3d(0, 0, -1px);
+          transform: translate3d(0, 0, -1px);
+          width: 100%;
+          min-height: 100%;
+          -webkit-background-size: cover;
+          background-size: cover;
+          z-index: -1;
+        }
+        .parallax.bg-01::before {
+          background-image: url(../../images/1.jpg);
+        }
+        .parallax.bg-02::before {
+          background-image: url(../../images/1.jpg);
+        }
+        .parallax.bg-03::before {
+          background-image: url(../../images/1.jpg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parallax bg-01">パララックスエリア</div>
+    <div class="parallax bg-02">パララックスエリア</div>
+    <div class="parallax bg-03">パララックスエリア</div>
+  </body>
+</html>

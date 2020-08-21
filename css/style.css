@@ -18,7 +18,7 @@ body {
 }
 a:link, a:visited, a:hover, a:active {
   text-decoration: none;
-  color: #56C4F1;
+  color: rgb(86, 196, 241);
 }
 .hidden {
   display: none;
