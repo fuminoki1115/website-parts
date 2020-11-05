@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+     .section1 {
+    padding: 50px;
+    position: relative;
+    }
+    /*レイアウト用のCSS*/
+    .section1::before {
+      content: "";
+      position: absolute;
+      bottom: -140px;
+      left: 0;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      z-index: 5;
+      /*ここで三角形のサイズを決める。
+    必ず幅100vwにして、ブラウザサイズいっぱいにしてください。*/
+      border-width: 150px 0 0 100vw;
+      border-color: red transparent transparent transparent;
+    }
+    .section1::after {
+      content: "";
+      position: absolute;
+      bottom: -808px;
+      left: 0;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      z-index: 5;
+      /*ここで三角形のサイズを決める。
+    必ず幅100vwにして、ブラウザサイズいっぱいにしてください。*/
+      border-width: 0 0 150px 100vw;
+      border-color: transparent transparent blue transparent;
+    }
+  
+  </style>
+</head>
+<body>
+  <div class="section1"></div>
+  
+</body>
+</html>
