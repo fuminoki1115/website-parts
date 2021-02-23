@@ -1,0 +1,55 @@
+.slide {
+  position: relative;
+  overflow: hidden;
+  margin: 10px auto 0;
+
+  width: 100%;
+  height: 700px;
+  
+  @keyframes topVideo {
+    0% {
+      opacity: 0;
+      visibility: hidden;
+    }
+    15% {
+      opacity: 1;
+      visibility: visible;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+  img,
+  video {
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 600px;
+    opacity: 0;
+    animation: topImg 2s 5.7s linear 1 forwards;
+  }
+  video {
+    animation: topVideo 7s 0s linear 1 backwards;
+  }
+}
+@keyframes topImg {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  
+  }
+
+  
+  
+}

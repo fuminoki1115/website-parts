@@ -1,0 +1,93 @@
+@charset "UTF-8";
+/*ヘッダー*/
+.acc1,
+.acc2 {
+  position: relative;
+}
+
+.acc1_checkbox,
+.acc2_checkbox {
+  display: none;
+}
+
+.acc1_icon,
+.acc2_icon {
+  cursor: pointer;
+  display: block;
+  width: 250px;
+  height: 50px;
+  position: absolute;
+}
+
+.acc1_icon_ribon,
+.acc2_icon_ribon {
+  width: 250px;
+  display: block;
+  padding: 15px;
+  color: #fff;
+  background: #7b7be5;
+}
+
+.acc1_icon_parts1, .acc1_icon_parts2,
+.acc2_icon_parts1,
+.acc2_icon_parts2 {
+  background-color: #fff;
+  display: block;
+  width: 15px;
+  height: 2px;
+  position: absolute;
+  top: 0;
+  left: 200px;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.acc1_icon_parts2,
+.acc2_icon_parts2 {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.acc1_menu,
+.acc2_menu {
+  position: relative;
+  top: 50px;
+  width: 250px;
+  background: #e2e2e2;
+  height: 0;
+  overflow: hidden;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.acc1_item,
+.acc2_item {
+  padding: 10px;
+  height: 50px;
+}
+
+.acc1_checkbox:checked ~ .acc1_icon .acc1_icon_parts2 {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.acc1_checkbox:checked ~ .acc1_menu {
+  height: 110px;
+}
+
+.acc2_checkbox:checked ~ .acc2_icon .acc2_icon_parts2 {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.acc2_checkbox:checked ~ .acc2_menu {
+  height: 110px;
+}
+
+.acc2 {
+  margin-top: 50px;
+}
+/*# sourceMappingURL=acc-menu.css.map */

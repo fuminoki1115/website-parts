@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>sample</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/inc.css" />
+
+    <style>
+      .top-name {
+  height: 200px;
+  text-align: center;
+}
+
+
+main {  
+  height: 2000px;
+}
+
+.global-nav {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  height: 50px;
+}
+.global-nav ul {
+  max-width: 700px;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+
+.fixed{
+  position: fixed;
+  top: 0px;
+}
+
+
+
+    </style>
+
+
+
+  </head>
+  <body>
+    <header>
+      <div class="top-name">
+        <h1>タイトル</h1>
+      </div>
+      <nav class="global-nav">
+        <ul>
+          <li class="nav-item"><a href="#">HOME</a></li>
+          <li class="nav-item"><a href="#">ABOUT</a></li>
+          <li class="nav-item"><a href="#">BLOG</a></li>
+          <li class="nav-item"><a href="#">CONTACT</a></li>
+        </ul>
+      </nav>
+    </header>
+    
+
+      <main>
+       
+
+
+      </main>
+    
+
+    
+    <footer>
+
+    </footer>
+    
+    
+<script>
+const _window   = window
+const _main     = document.querySelector('main')
+const _globalnavi = document.querySelector('.global-nav')
+
+const fixSidebarWhenScrolled = () => {
+const rangeFromTopToHeader = document.querySelector('.top-name')
+ .getBoundingClientRect().bottom + _window.pageYOffset
+
+  // global-navの位置をスクロール量を合わせて固定表示にする
+  const sidebarTopFixedVal = `${_main.getBoundingClientRect().bottom +
+    _window.pageYOffset - _globalnavi.clientHeight}px`
+  // スクロール量を取得
+  const _windowScrollWeight = _window.pageYOffset
+  // サイドバーがメインコンテンツ内にある場合
+  if (_windowScrollWeight > rangeFromTopToHeader) {
+    _globalnavi.style.top = `0px`
+    // 固定するクラスを追加
+    _globalnavi.classList.add('fixed')
+  } else {
+    _globalnavi.style.top = `${rangeFromTopToHeader}px`
+    // 固定するクラスを削除
+    _globalnavi.classList.remove('fixed')
+  }
+}
+    fixSidebarWhenScrolled()
+    _window.addEventListener('scroll', fixSidebarWhenScrolled)
+</script>
+     
+   
+  </body>
+</html>
