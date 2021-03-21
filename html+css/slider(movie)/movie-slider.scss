@@ -5,7 +5,7 @@
 
   width: 100%;
   height: 700px;
-  
+
   @keyframes topVideo {
     0% {
       opacity: 0;
@@ -23,18 +23,25 @@
       visibility: hidden;
     }
   }
-  img,
+  .bg-img,
   video {
-    object-fit: cover;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 600px;
+    min-height: 100vh;
     opacity: 0;
+  }
+  .bg-img {
     animation: topImg 2s 5.7s linear 1 forwards;
+    background-image: url(../../images/1.jpg), linear-gradient(#59c047, #d87787);
+    // background-blend-mode: hard-light;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
   }
   video {
+    // object-fit: cover;
     animation: topVideo 7s 0s linear 1 backwards;
   }
 }
@@ -47,9 +54,5 @@
   }
   100% {
     opacity: 1;
-  
   }
-
-  
-  
 }

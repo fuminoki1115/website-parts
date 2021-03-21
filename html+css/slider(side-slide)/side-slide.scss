@@ -1,0 +1,73 @@
+body {
+  padding: 30px 50px;
+}
+h1 {
+  margin-bottom: 100px;
+}
+
+/* スライドする要素 */
+.content {
+  width: 300px;
+  height: 300px;
+  &:nth-child(1) {
+    background-color: tomato;
+  }
+  &:nth-child(2) {
+    background-color: orange;
+  }
+  &:nth-child(3) {
+    background-color: blue;
+  }
+  &:nth-child(4) {
+    background-color: green;
+  }
+  &:nth-child(5) {
+    background-color: pink;
+  }
+}
+/* スライドレールの枠 */
+.wrap {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  height: 340px;
+  margin-bottom: 100px;
+}
+
+/* content4つをまとめたスライドブロック */
+.slideshow {
+  display: flex;
+  animation: loop-slide 20s infinite linear 1s both;
+  li {
+    color: white;
+    text-align: center;
+    padding-top: 30px;
+  }
+}
+
+@keyframes loop-slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+/* ホバー時に動きを止める*/
+.slide-paused:hover .slideshow {
+  animation-play-state: paused;
+}
+
+/* ホバー時の装飾 */
+.content-hover {
+  transition: all 0.2s;
+  margin-right: 10px;
+  &:hover {
+    transform: translateY(-20px);
+    border-radius: 10%;
+    box-shadow: 0 3px 10px 0 #333;
+    opacity: 0.8;
+    cursor: pointer;
+  }
+}

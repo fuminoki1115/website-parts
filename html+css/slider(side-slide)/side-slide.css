@@ -1,0 +1,108 @@
+@charset "UTF-8";
+body {
+  padding: 30px 50px;
+}
+
+h1 {
+  margin-bottom: 100px;
+}
+
+/* スライドする要素 */
+.content {
+  width: 300px;
+  height: 300px;
+}
+
+.content:nth-child(1) {
+  background-color: tomato;
+}
+
+.content:nth-child(2) {
+  background-color: orange;
+}
+
+.content:nth-child(3) {
+  background-color: blue;
+}
+
+.content:nth-child(4) {
+  background-color: green;
+}
+
+.content:nth-child(5) {
+  background-color: pink;
+}
+
+/* スライドレールの枠 */
+.wrap {
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 340px;
+  margin-bottom: 100px;
+}
+
+/* content4つをまとめたスライドブロック */
+.slideshow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-animation: loop-slide 20s infinite linear 1s both;
+          animation: loop-slide 20s infinite linear 1s both;
+}
+
+.slideshow li {
+  color: white;
+  text-align: center;
+  padding-top: 30px;
+}
+
+@-webkit-keyframes loop-slide {
+  from {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  to {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+}
+
+@keyframes loop-slide {
+  from {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  to {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+}
+
+/* ホバー時に動きを止める*/
+.slide-paused:hover .slideshow {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+
+/* ホバー時の装飾 */
+.content-hover {
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  margin-right: 10px;
+}
+
+.content-hover:hover {
+  -webkit-transform: translateY(-20px);
+          transform: translateY(-20px);
+  border-radius: 10%;
+  -webkit-box-shadow: 0 3px 10px 0 #333;
+          box-shadow: 0 3px 10px 0 #333;
+  opacity: 0.8;
+  cursor: pointer;
+}
+/*# sourceMappingURL=side-slide.css.map */
