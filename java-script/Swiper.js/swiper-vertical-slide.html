@@ -8,13 +8,11 @@
     <link rel="stylesheet" href="../../css/style.css" />
     <link rel="stylesheet" href="min/swiper.min.css" />
     <link rel="stylesheet" href="swiper-custom.css" />
-    
     <style>
       .swiper-slide-active h2,
       .swiper-slide-active p {
         animation: left 1s ease-in-out 0.5s forwards;
       }
-
     </style>
   </head>
 
@@ -67,17 +65,13 @@
           </div>
         </div>
       </div>
+    
       <div class="swiper-pagination"></div>
     </div>
-    <div class="main-content" style="height:1000px">
-      <p>
-        jsのmousewheelで上にスクロールした時はここを一番上まで上げて、下にスクロールした際には一番下に隠すようにする。idはスライドショーの一番最後の画面に設置。
-      </p>
-    </div>
-
 
     <script src="min/swiper.min.js"></script>
     <script>
+      
       //スライダー
       var mainSlider = new Swiper(".slider", {
         direction: 'vertical',
@@ -86,10 +80,10 @@
         loop: false,
         slidesPerView: 1,
         effect: "slide",
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
+        // navigation: {
+        //   nextEl: ".swiper-button-next",
+        //   prevEl: ".swiper-button-prev",
+        // },
         pagination: {
           el: ".swiper-pagination",
           type: "bullets",

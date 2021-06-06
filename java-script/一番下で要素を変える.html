@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    div {
+      height: 100vh;
+    }
+    div:first-child {
+      background-color: skyblue;
+    }
+    div:nth-child(2) {
+      background-color: lemonchiffon;
+    }
+    div:nth-child(3) {
+      background-color: goldenrod;
+    }
+    #sec4 {
+      background-color: pink;
+      display: none;
+    
+    }
+    #sec4.change {
+      position: relative;
+      display:block
+    }
+  </style>
+</head>
+<body>
+  <div id="sec1">1</div>
+  <div id="sec2">2</div>
+  <div id="sec3">3</div>
+  <div id="sec4">4</div>
+  
+  <script>
+    const scrollHeight = Math.max(
+  document.body.scrollHeight, document.documentElement.scrollHeight,
+  document.body.offsetHeight, document.documentElement.offsetHeight,
+  document.body.clientHeight, document.documentElement.clientHeight
+);
+
+// 一番下までスクロールした時の数値を取得(window.innerHeight分(画面表示領域分)はスクロールをしないため引く)
+const pageMostBottom = scrollHeight - window.innerHeight;
+
+window.addEventListener('scroll', () => {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    // iosはバウンドするので、無難に `>=` にする
+    if (scrollTop >= pageMostBottom) {
+      document.getElementById('sec4').classList.add('change');
+    }
+    else {
+      document.getElementById('sec4').classList.remove('change');
+   
+    }
+
+  });
+  </script>
+</body>
+</html>
